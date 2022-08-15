@@ -4,7 +4,7 @@ pipeline {
 3
         registry = "jaswiktechnologiesdocker/nginx" 
 4
-        registryCredential = 'dockerhub_id'  
+        registryCredential = credentials("dockerhub_id")  
 6
     }
     stages {
@@ -12,7 +12,7 @@ pipeline {
         {
             steps{
                echo "-------------------------"
-               echo "My credentials is $registryCredential"
+                echo "My credentials is ${registryCredential}"
                
             }
             }
