@@ -14,8 +14,7 @@ pipeline {
 
         stage('Build Docker Image') {
           steps {
-            sh 'cd /var/lib/jenkins/workspace/pipelinetesting_master'
-            sh 'docker build -t jaswiktechnologiesdocker/nginx:${BUILD_NUMBER} .'
+             sh 'docker build -t jaswiktechnologiesdocker/nginx:${BUILD_NUMBER} .'
             }
         }
 
