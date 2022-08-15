@@ -14,9 +14,9 @@ pipeline {
                echo "-------------------------"
                echo "My credentials is $registryCredential"
                
-
             }
-    stages {
+            }
+   
         stage("git clone")
         {
             steps{
