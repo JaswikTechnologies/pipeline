@@ -1,4 +1,11 @@
 pipeline {
+    environment { 
+3
+        registry = "jaswiktechnologiesdocker/nginx" 
+4
+        registryCredential = 'dockerhub_id'  
+6
+    }
     agent any
     stages {
         stage("git clone")
@@ -20,8 +27,11 @@ pipeline {
 
         stage('Push Image to Docker Hub') {
           steps {
+            docker.withRegistry('https://hub.docker.com/repository/docker/jaswiktechnologiesdocker/nginx', registryCredential ) { 
+
            sh    'docker push jaswiktechnologiesdocker/nginx:${BUILD_NUMBER}'
            }
+          }
         }
 
         stage('Deploy to Docker Host') {
