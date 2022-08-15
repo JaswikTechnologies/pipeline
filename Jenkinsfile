@@ -4,8 +4,8 @@ pipeline {
 
         stage('Clone Repo') {
           steps {
-            sh 'rm -rf Dcokesamplepoject'
-            sh 'git clone https://github.com/JaswikTechnologies/Dcokesamplepoject.git'
+            sh 'rm -rf pipeline*'
+            sh 'git clone https://github.com/JaswikTechnologies/pipeline.git'
             }
         }
 
