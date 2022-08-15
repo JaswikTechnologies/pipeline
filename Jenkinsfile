@@ -5,7 +5,7 @@ pipeline {
         {
             steps{
 
-                sh 'rm -rf Dcokesamplepoject*'
+                sh 'rm -rf pipeline*'
                 sh 'git clone https://github.com/JaswikTechnologies/pipeline.git'
 
             }
