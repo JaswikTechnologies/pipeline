@@ -27,10 +27,12 @@ pipeline {
 
         stage('Push Image to Docker Hub') {
           steps {
-            docker.withRegistry('', registryCredential ) { 
-
+            script { 
+            docker.withRegistry('https://hub.docker.com/repository/docker/jaswiktechnologiesdocker/nginx', registryCredential ) { 
+            }
+            }
            sh    'docker push jaswiktechnologiesdocker/nginx:${BUILD_NUMBER}'
-           }
+           
           }
         }
 
