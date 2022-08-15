@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     environment { 
 3
         registry = "jaswiktechnologiesdocker/nginx" 
@@ -6,7 +7,15 @@ pipeline {
         registryCredential = 'dockerhub_id'  
 6
     }
-    agent any
+    stages {
+        stage("Enviornment")
+        {
+            steps{
+               echo "-------------------------"
+               echo "My credentials is $registryCredential"
+               
+
+            }
     stages {
         stage("git clone")
         {
